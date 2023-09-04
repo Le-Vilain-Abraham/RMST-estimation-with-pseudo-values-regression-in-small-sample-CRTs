@@ -42,12 +42,7 @@ performance_measures <- function(t.star, lambda, rho, beta, data, gamma){
   rejection.rate <- mean(data$ci.low > 0 | data$ci.up < 0) * 100 #0 is not is [ci.low,ci.up]
   
   #Results
-  return(data.frame("bias" = bias, 
-                    "relative.bias" = relative.bias, 
-                    "ESD" = ESD, 
-                    "ASD" = ASD, 
-                    "ASD_ESD" = ASD-ESD, 
-                    "relative.error" = relative.error, 
+  return(data.frame("relative.error" = relative.error, 
                     "coverage" = coverage, 
                     "rejection.rate" = rejection.rate, 
                     "D" = D))
